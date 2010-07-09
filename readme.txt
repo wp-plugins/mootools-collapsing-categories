@@ -328,11 +328,6 @@ This will produce a list with:
 * exclude posts from  the categories general and uncategorized
 
 
-== Demo ==
-
-I use this plugin in my blog at http://blog.robfelty.com
-
-
 == CAVEAT ==
 
 Currently this plugin relies on Javascript to expand and collapse the links.
