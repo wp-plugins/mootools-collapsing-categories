@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Moo Collapsing Categories
-Plugin URI: http://www.3dolab.net/259/mootools-collapsing-categories-and-archives
+Plugin URI: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
 Version: 0.1
