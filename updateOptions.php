@@ -75,6 +75,10 @@
       if (!isset($new_instance['useCookies'])) {
         $useCookies= false ;
       }
+      $expandCatPost=true;
+      if (!isset($new_instance['expandCatPost'])) {
+        $expandCatPost= false ;
+      }
       $showTopLevel=true;
       if (!isset($new_instance['showTopLevel'])) {
         $showTopLevel= false ;

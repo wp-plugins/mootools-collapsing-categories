@@ -1,21 +1,29 @@
 === Moo Collapsing Categories ===
 Contributors: 3dolab
-Homepage: http://www.3dolab.net/blog
+Homepage: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 Tags: categories, sidebar, widget, navigation, menu, posts, collapsing, collapsible, mootools
 Requires at least: 2.8
-Tested up to: 2.9.2
-Stable tag: 0.2
+Tested up to: 3.0.1
+Stable tag: 0.3
 
-This plugin uses Javascript based on MooTools framework to dynamically expand or collaps the set of
-categories listing. Fork of Rob Felty's Collapsing Categories
+This plugin uses Javascript based on MooTools framework to dynamically expand or collapse the categories listing.
 
 == Description ==
 
 This is a relatively simple plugin that uses Javascript based on MooTools framework to
-make the Archive links in the sidebar collapsable by year and/or month.
+make each Categories links in the sidebar collapsable. Every post corresponding to a given
+category will be expanded. Fork of Rob Felty's Collapsing Categories
 
+= Plugin Homepage =
+
+http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 
 = What's new? =
+
+* 0.3 (2010.09.25)
+    * Full compatibility with Wordpress 3.0.1
+    * Updated according to Rob Felty's Collapsing Categories v.1.2.2
+    * Bugfix: title attribute of expand / collapse links
 
 * 0.2 (2010.06.28)
     * Relies on MooTools 1.2.4
@@ -33,12 +41,6 @@ links in the sidebar for the categories. Every post corresponding to a given
 category will be expanded.
 
 
-= CSS Class changes = 
-Version 1.1 introduces different css classes to the collapsing categories and
-posts, which should make it easier to style in the future, and more consistent
-across my other collapsing plugins
-Please see below for an explanation of the css classes
-
 = IMPORTANT INFORMATION regarding wordpress 2.7 and 2.8 =
 
 Version 0.2 is compatible with wordpress 2.8+,
@@ -49,6 +51,11 @@ If you prefer to insert code into your theme manually instead of using
 widgets, please note that the manual installation instructions have changed. 
 
 = What's New?=
+
+* 0.3 (2010.09.25)
+    * Full compatibility with Wordpress 3.0.1
+    * Updated according to Rob Felty's Collapsing Categories v.1.2.2
+    * Bugfix: title attribute of expand / collapse links
 
 * 0.2 (2010.06.28)
     * Relies on MooTools 1.2.4
@@ -64,12 +71,12 @@ IMPORTANT!
 Please deactivate before upgrading, then re-activate the plugin. 
 
 Unpackage contents to wp-content/plugins/ so that the files are in a
-collapsing-categories directory.
+mootools-collapsing-categories/ directory.
 
 = Widget installation = 
 
  Activate the plugin, then simply go the
-Presentation > Widgets section and drag over the Collapsing Categories Widget.
+Presentation > Widgets section and drag over the Moo Collapsing Categories Widget.
 
 
 = Manual installation = 
@@ -157,36 +164,14 @@ The following classes are used:
   expanded)
 * sym - class for the expanding / collapsing symbol
 
-An example:
-
-<ul id='widget-collapscat-15-top ' class='collapsing categories list'>
-  <li class='collapsing categories post'><a
-    href='http://mysite.com/your-website/about-your-own-site/'
-    title='About your own site'>About your own site</a>
-  </li>
-  <li class='collapsing categories'><span class='collapsing categories expand'
-    onclick='expandCollapse(event, "▶","▼", 1, "collapsing categories"); return
-    false'><span class='sym'>▶</span>Web hosting</span>
-    <ul id='collapsCat-176-15' style="display:none">
-      <li class='collapsing categories post'><a 
-        href='http://mysite.com/your-website/web-hosting/about-webhosting/'
-        title='About webhosting'>About webhosting</a>
-      </li>
-      <li class='collapsing categories post'><a 
-        href='http://mysite.com/products/webhosting-1/'
-        title='Webhosting #1'>Webhosting #1</a>
-      </li>
-      <li class='collapsing categories post'><a 
-        href='http://mysite.com/products/webhosting-2/'
-        title='Webhosting #2'>Webhosting #2</a>
-      </li>
-    </ul>
-  </li> <!-- ending subcategory -->
-
 == Screenshots ==
 
 1. a few expanded categories with default theme, showing nested categories
 2. available options 
+
+== Demo ==
+
+I use this plugin in my blog at http://www.3dolab.net
 
 == Options ==
 Style options can be set via the settings panel. All other options can be set
@@ -336,6 +321,11 @@ posts, but the links to the categories will still work (which is the default
 behavior in wordpress anyways)
 
 == CHANGELOG ==
+
+* 0.3 (2010.09.25)
+    * Full compatibility with Wordpress 3.0.1
+    * Updated according to Rob Felty's Collapsing Categories v.1.2.2
+    * Bugfix: title attribute of expand / collapse links
 
 * 0.2 (2010.06.28)
     * Relies on MooTools 1.2.4

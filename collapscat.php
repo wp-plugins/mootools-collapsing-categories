@@ -4,7 +4,7 @@ Plugin Name: Moo Collapsing Categories
 Plugin URI: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
-Version: 0.2
+Version: 0.3
 Author URI: http://www.3dolab.net
 
 Copyright 2010 3dolab
@@ -32,15 +32,16 @@ This file is part of Moo Collapsing Categories
 
 $url = get_settings('siteurl');
 global $collapsCatVersion;
-$collapsCatVersion = '0.2';
+$collapsCatVersion = '0.3';
 
 if (!is_admin()) {
-  add_action('wp_head', wp_register_script('moocore',"$url/wp-content/plugins/mootools-collapsing-categories/smootools-1.2-core-yc.js", false, '1.2'));
-  add_action('wp_head', wp_register_script('moomore', "$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-more.js", false, '1.2'));
-  add_action('wp_head', wp_enqueue_script('moocore'));
-  add_action('wp_head', wp_enqueue_script('moomore'));
-  add_action('wp_head', wp_enqueue_script('collapsFunctions', "$url/wp-content/plugins/mootools-collapsing-categories/collapsFunctions.js", array('moocore','moomore', 'multibox','overlay', 'imgmenutabberstretch'), '1.2'));
-  add_action( 'wp_head', array('collapscat','get_head'));
+  $inFooter = get_option('collapsCatInFooter');
+  wp_register_script('moocore',"$url/wp-content/plugins/mootools-collapsing-categories/smootools-1.2-core-yc.js", false, '1.2');
+  wp_register_script('moomore', "$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-more.js", false, '1.2');
+  wp_enqueue_script('moocore');
+  wp_enqueue_script('moomore');
+  wp_enqueue_script('collapsFunctions', "$url/wp-content/plugins/mootools-collapsing-categories/collapsFunctions.js", array('moocore','moomore', 'multibox','overlay', 'imgmenutabberstretch'), '1.2');
+  add_action( 'wp_head', array('collapsCat','get_head'));
 //  add_action( 'wp_footer', array('collapsCat','get_foot'));
 } else {
   // call upgrade function if current version is lower than actual version
@@ -48,11 +49,11 @@ if (!is_admin()) {
   if (!$dbversion || $collapsCatVersion != $dbversion)
     collapscat::init();
 }
-add_action('admin_menu', array('collapscat','setup'));
-add_action('init', array('collapscat','init_textdomain'));
-register_activation_hook(__FILE__, array('collapscat','init'));
+add_action('admin_menu', array('collapsCat','setup'));
+add_action('init', array('collapsCat','init_textdomain'));
+register_activation_hook(__FILE__, array('collapsCat','init'));
 
-class collapscat {
+class collapsCat {
 	function init_textdomain() {
 	  $plugin_dir = basename(dirname(__FILE__)) . '/languages/';
 	  load_plugin_textdomain( 'mootools-collapsing-categories', WP_PLUGIN_DIR . $plugin_dir, $plugin_dir );
@@ -107,64 +108,22 @@ class collapscat {
     $style
     </style>\n";
 	}
-  function get_foot() {
-    $url = get_settings('siteurl');
-		echo "<script type=\"text/javascript\">\n";
-		echo "// <![CDATA[\n";
-		echo '/* These variables are part of the Collapsing Categories Plugin 
-		      *  Version: 1.1.1
-		      *  $Id: collapscat.php 199109 2010-01-28 20:30:07Z robfelty $
-					* Copyright 2007 Robert Felty (robfelty.com)
-					*/' . "\n";
-    global $expandSym,$collapseSym,$expandSymJS, $collapseSymJS, 
-      $wpdb,$options,$wp_query, $autoExpand, $postsToExclude, 
-      $postsInCat;
-  include('defaults.php');
-  $options=wp_parse_args($args, $defaults);
-  extract($options);
-  if ($expand==1) {
-    $expandSym='+';
-    $collapseSym='—';
-  } elseif ($expand==2) {
-    $expandSym='[+]';
-    $collapseSym='[—]';
-  } elseif ($expand==3) {
-    $expandSym="<img src='". get_settings('siteurl') .
-         "/wp-content/plugins/mootools-collapsing-categories/" . 
-         "img/expand.gif' alt='expand' />";
-    $collapseSym="<img src='". get_settings('siteurl') .
-         "/wp-content/plugins/mootools-collapsing-categories/" . 
-         "img/collapse.gif' alt='collapse' />";
-  } elseif ($expand==4) {
-    $expandSym=$customExpand;
-    $collapseSym=$customCollapse;
-  } else {
-    $expandSym='▶';
-    $collapseSym='▼';
-  }
-  if ($expand==3) {
-    $expandSymJS='expandImg';
-    $collapseSymJS='collapseImg';
-  } else {
-    $expandSymJS=$expandSym;
-    $collapseSymJS=$collapseSym;
-  }
-    echo "var expandSym=\"$expandSym\";";
-    echo "var collapseSym=\"$collapseSym\";";
-    echo "var expand=\"$expandSymJS\";";
-    echo "var collapse=\"$collapseSymJS\";";
-    echo "var animate=\"$animate\";";
-    foreach ($autoExpand as $expandedCat){
-	    $expandCookieCat = "Cookie.set('collapsCat-".$expandedCat."', 'inline');";
-	    echo $expandCookieCat;
+  function phpArrayToJS($array,$name) {
+    /* generates javscript code to create an array from a php array */
+    $script = "try { $name" . 
+        "['catTest'] = 'test'; } catch (err) { $name = new Object(); }\n";
+    foreach ($array as $key => $value){
+      $script .= $name . "['$key'] = '" . 
+          addslashes(str_replace("\n", '', $value)) . "';\n";
     }
-		echo "// ]]>\n</script>\n";
+    return($script);
   }
 }
 
 
 include_once( 'collapscatlist.php' );
 function collapsCat($args='', $print=true) {
+  global $collapsCatItems;
   if (!is_admin()) {
     list($posts, $categories, $parents, $options) = 
         get_collapscat_fromdb($args);
@@ -176,9 +135,8 @@ function collapsCat($args='', $print=true) {
       echo "<li style='display:none'><script type=\"text/javascript\">\n";
       echo "// <![CDATA[\n";
       echo '/* These variables are part of the Collapsing Categories Plugin 
-      *  Version: 1.1.1
-      *  $Id: collapscat.php 199109 2010-01-28 20:30:07Z robfelty $
-      * Copyright 2007 Robert Felty (robfelty.com)
+      *  Version: 0.3
+      * Copyright 2010 3DO lab (3dolab.net)
       */' . "\n";
       global $expandSym,$collapseSym,$expandSymJS, $collapseSymJS, 
       $wpdb,$options,$wp_query, $autoExpand, $postsToExclude, 
@@ -203,8 +161,8 @@ function collapsCat($args='', $print=true) {
     $expandSym=$customExpand;
     $collapseSym=$customCollapse;
   } else {
-    $expandSym='▶';
-    $collapseSym='▼';
+    $expandSym='&#9656;';
+    $collapseSym='&#9662;';
   }
   if ($expand==3) {
     $expandSymJS='expandImg';
@@ -219,9 +177,11 @@ function collapsCat($args='', $print=true) {
     echo "var collapse=\"$collapseSymJS\";";
     echo "var animate=\"$animate\";";
     foreach ($autoExpand as $expandedCat){
-	    $expandCookieCat = "Cookie.write('collapsCat-".$expandedCat."', 'inline');";
+	    $expandCookieCat = "Cookie.write('collapsCat-".$expandedCat.":".$number."', 'inline');";
 	    echo $expandCookieCat;
     }
+      // now we create an array indexed by the id of the ul for posts
+      echo collapsCat::phpArrayToJS($collapsCatItems, 'collapsItems');
       echo "// ]]>\n</script></li>\n";
     } else {
       return(array($collapsCatText, $postsInCat));
@@ -229,6 +189,6 @@ function collapsCat($args='', $print=true) {
   }
 }
 $version = get_bloginfo('version');
-if (preg_match('/^2\.[8-9]/', $version)) 
+if (preg_match('/^(2\.[8-9]|3\..*)/', $version))
   include('collapscatwidget.php');
 ?>

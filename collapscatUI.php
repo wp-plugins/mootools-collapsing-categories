@@ -52,6 +52,7 @@ if( isset($_POST['resetOptions']) ) {
 
   update_option('collapsCatStyle', $style);
   update_option('collapsCatSidebarId', $_POST['collapsCatSidebarId']);
+  update_option('collapsCatInFooter', $_POST['collapsCatInFooter']);
   update_option('collapsCatDefaultStyles', $defaultStyles);
 
   if ($widgetOn==0) {
@@ -107,7 +108,15 @@ stripslashes(get_option('collapsCatStyle')) ?>" />
     <?php _e('You may also customize your style below if you wish', 'collapsing-categories'); ?><br />
    <input type='button' value='<?php _e("restore current style", "collapsing-categories"); ?>'
 onclick='restoreStyle();' /><br />
-   <textarea onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", true);' cols='78' rows='10' id="collapsCatStyle"name="collapsCatStyle"><?php echo stripslashes(get_option('collapsCatStyle'))?></textarea>
+   <textarea onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", true);' cols='78' rows='10' id="collapsCatStyle" name="collapsCatStyle"><?php echo stripslashes(get_option('collapsCatStyle'))?></textarea>
+   </p>
+   <p>
+   <input type="checkbox" name="collapsCatInFooter" id ="collapsCatInFooter"
+   <?php if (get_option('collapsCatInFooter')) echo
+   'checked'; ?> id="collapsCatInFooter"></input> 
+<label
+   for="collapsCatInFooter"><?php _e('Put javascript file in footer (speeds
+   page load, but is not compatible with all themes', 'collapsing-categories'); ?></label>  
     </p>
 <script type='text/javascript'>
 

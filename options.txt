@@ -142,6 +142,11 @@ categories A and B when A or B is excluded</label>
 <?php if ($showTopLevel)  echo 'checked'; ?> id="<?php echo $this->get_field_id('showTopLevel'); ?>"></input>    Show top level categories
    </p>
    <p>
+     <input type="checkbox" name="<?php echo
+$this->get_field_name('expandCatPost'); ?>"
+<?php if ($expandCatPost)  echo 'checked'; ?> id="<?php echo $this->get_field_id('expandCatPost'); ?>"></input> Expand categories assigned to a particular post on a single post page 
+   </p>
+   <p>
      <input type="checkbox" name="<?php echo $this->get_field_name('postsBeforeCats'); ?>"
 <?php if ($postsBeforeCats)  echo 'checked'; ?> id="<?php echo $this->get_field_id('postsBeforeCats'); ?>"></input>  Posts should come before sub-categories;
    </p>

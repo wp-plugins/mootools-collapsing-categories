@@ -4,7 +4,17 @@ window.addEvent('domready', function() {
 	  var DiSSolviLink = new Fx.Tween(symlink, {
 			wait: false,
 			duration:300
-		});
+		});  
+	  if (typeof(collapseText)!='undefined' && typeof(expandText)!='undefined') {
+	    var SymText;
+	    if (state==collapse){
+	      SymText=collapseText;
+	    }
+	    else if (state==expand){
+	      SymText=expandText;
+	    }
+	    symlink.parentNode.setAttribute('title',SymText);
+	  }
 	  if (typeof(expand)!='undefined' && typeof(collapse)!='undefined') {
 	    if (expand=='expandImg') {
 		  expand=expandSym;
@@ -14,7 +24,7 @@ window.addEvent('domready', function() {
 		}
 	    if (symlink.className == 'sym'){if (typeof(animate)!='undefined' && animate==0) {symlink.innerHTML = state;}
 	    else { DiSSolviLink.start('opacity',1,0).chain(function(){
-							symlink.innerHTML = state;
+							symlink.innerHTML = state;							
 							DiSSolviLink.start('opacity',0,1)
 							});
 	    }
@@ -37,6 +47,7 @@ window.addEvent('domready', function() {
 		new Event(event).stop();
 		tabreset();
 		var symlink = theSlides[n].getParent().getParent().getPrevious().getFirst().getFirst();
+		// theId = theSlides[n].id;
 		if (slideVars[n].wrapper.offsetHeight == 0) {
 						if (typeof(collapse)!='undefined') {
 						replaceSym(symlink, collapse);
@@ -50,6 +61,9 @@ window.addEvent('domready', function() {
 							});
 						    }
 						Cookie.write(theSlides[n].id, 'inline');
+						// if (collapsItems[theId]) {
+						//  theSlides[n].innerHTML=collapsItems[theId];
+						// }
 					}
 					else {
 						if (typeof(expand)!='undefined') {
@@ -63,6 +77,9 @@ window.addEvent('domready', function() {
 							}); //there you simply close the potentially opened other divs
 						}
 						Cookie.write(theSlides[n].id, 'off');
+						// if (collapsItems[theId]) {
+						//  theSlides[n].innerHTML='<li></li>';
+						// }
 					}
 	}
 	
@@ -105,7 +122,7 @@ window.addEvent('domready', function() {
 			    if(Cookie.read(expandedSlideNest))  {
 				if (Cookie.read(expandedSlideNest) == null || Cookie.read(expandedSlideNest) != 'off' || Cookie.read(expandedSlideNest) == 'inline') {
 				  if (typeof(collapse)!='undefined') {
-				  replaceSym(toggled.getFirst(), collapse);
+				  replaceSym(toggled.getFirst(), expand);
 				  }
 				  this.fireEvent('showFunction', showFunction(i));
 				  var hidden = theSlides[n].getParent().getParent().getStyle('height') == '0px' ? true : false;
@@ -116,7 +133,7 @@ window.addEvent('domready', function() {
 			    }
 			    else {
 				  if (typeof(collapse)!='undefined') {
-				  replaceSym(toggled.getFirst(), expand);
+				  replaceSym(toggled.getFirst(), collapse);
 				  }
 				  this.fireEvent('showFunction', showFunction(i));
 				  var hidden = theSlides[n].getParent().getParent().getStyle('height') == '0px' ? true : false;
