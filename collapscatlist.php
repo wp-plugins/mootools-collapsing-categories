@@ -74,7 +74,7 @@ function miscPosts($cat,$catlink,$subcatpostcount2, $posttext) {
   $showHide='expand';
   $symbol=$expandSym;
   $expanded='inline';
-  $theID='collapsCat-' . $cat->term_id . ":$number-misc";
+  $theID='collapsCat-' . $cat->slug . ":$number-misc";
 
   if ((in_array($cat->term_id, $cur_categories) && $expandCatPost) ||
       ($useCookies && $_COOKIE[$theID]==1)) {
@@ -216,7 +216,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
         $self="";
       }
       if ($cat->term_id==$cat2->parent) {
-        $theID='collapsCat-' . $cat2->term_id . ":$number";
+        $theID='collapsCat-' . $cat2->slug . ":$number";
         list($subCatPostCount2, $posttext2) = 
             getSubPosts($postsInCat[$cat2->term_id],$cat2, $showPosts, $theID);
         $totalCatPostCount+=$subCatPostCount2;
@@ -339,8 +339,11 @@ function get_sub_cat($cat, $categories, $parents, $posts,
           if ($subCatCount>0 && $posttext2!='' && $addMisc) {
             $posttext2=miscPosts($cat2,$catlink,$subCatPostCount2,
                 $posttext2);
-	  } else {
+	  if ($expanded=='block') {
             $subCatLinks.=$posttext2;
+          } else {
+            // $subCatLinks.='<li></li>';
+	    $subCatLinks.=$posttext2;
           }
         }
         // add in additional subcategory information
@@ -593,7 +596,7 @@ function list_categories($posts, $categories, $parents, $options) {
     $theCount=$subCatPostCount2 + $totalCatPostCount;
     if ($theCount>0) {
       $expanded='inline';
-      $theID='collapsCat-' . $cat->term_id . ":$number";
+      $theID='collapsCat-' . $cat->slug . ":$number";
       if (((in_array($cat->name, $autoExpand) ||
           in_array($cat->slug, $autoExpand)) && $expandCatPost) ||
           ($useCookies && $_COOKIE[$theID]==1)) {
@@ -680,7 +683,7 @@ function list_categories($posts, $categories, $parents, $options) {
         $collapsCatItems[$theID] = $text;
       }
       if ($expanded!='block' && $showTopLevel) {
-        $posttext='<li></li>';
+        // $posttext='<li></li>';
       } 
       if ($postsBeforeCats) {
         $text =$posttext . $subCatLinks;
