@@ -74,7 +74,7 @@ function miscPosts($cat,$catlink,$subcatpostcount2, $posttext) {
   $showHide='expand';
   $symbol=$expandSym;
   $expanded='inline';
-  $theID='collapsCat-' . $cat->slug . ":$number-misc";
+  $theID='collapsCat-' . $cat->term_id . ":$number-misc";
 
   if ((in_array($cat->term_id, $cur_categories) && $expandCatPost) ||
       ($useCookies && $_COOKIE[$theID]==1)) {
@@ -216,7 +216,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
         $self="";
       }
       if ($cat->term_id==$cat2->parent) {
-        $theID='collapsCat-' . $cat2->slug . ":$number";
+        $theID='collapsCat-' . $cat2->term_id . ":$number";
         list($subCatPostCount2, $posttext2) = 
             getSubPosts($postsInCat[$cat2->term_id],$cat2, $showPosts, $theID);
         $totalCatPostCount+=$subCatPostCount2;
@@ -593,7 +593,7 @@ function list_categories($posts, $categories, $parents, $options) {
     $theCount=$subCatPostCount2 + $totalCatPostCount;
     if ($theCount>0) {
       $expanded='inline';
-      $theID='collapsCat-' . $cat->slug . ":$number";
+      $theID='collapsCat-' . $cat->term_id . ":$number";
       if (((in_array($cat->name, $autoExpand) ||
           in_array($cat->slug, $autoExpand)) && $expandCatPost) ||
           ($useCookies && $_COOKIE[$theID]==1)) {
