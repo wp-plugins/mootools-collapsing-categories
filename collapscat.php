@@ -36,7 +36,7 @@ $collapsCatVersion = '0.3';
 
 if (!is_admin()) {
   $inFooter = get_option('collapsCatInFooter');
-  wp_register_script('moocore',"$url/wp-content/plugins/mootools-collapsing-categories/smootools-1.2-core-yc.js", false, '1.2');
+  wp_register_script('moocore',"$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-core-yc.js", false, '1.2');
   wp_register_script('moomore', "$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-more.js", false, '1.2');
   wp_enqueue_script('moocore');
   wp_enqueue_script('moomore');
