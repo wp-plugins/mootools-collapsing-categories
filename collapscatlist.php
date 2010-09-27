@@ -339,6 +339,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
           if ($subCatCount>0 && $posttext2!='' && $addMisc) {
             $posttext2=miscPosts($cat2,$catlink,$subCatPostCount2,
                 $posttext2);
+	  }
 	  if ($expanded=='block') {
             $subCatLinks.=$posttext2;
           } else {
