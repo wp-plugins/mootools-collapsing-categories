@@ -1,5 +1,8 @@
 Moo Collapsing Archives Changelog
 
+* 0.4 (2010.10.21)
+    * Bugfix: register script array
+
 * 0.3 (2010.09.25)
     * Full compatibility with Wordpress 3.0.1
     * Updated according to Rob Felty's Collapsing Categories v.1.2.2

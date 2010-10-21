@@ -4,7 +4,7 @@ Homepage: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archiv
 Tags: categories, sidebar, widget, navigation, menu, posts, collapsing, collapsible, mootools
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 0.3
+Stable tag: 0.4
 
 This plugin uses Javascript based on MooTools framework to dynamically expand or collapse the categories listing.
 
@@ -19,6 +19,8 @@ category will be expanded. Fork of Rob Felty's Collapsing Categories
 http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 
 = What's new? =
+* 0.4 (2010.10.21)
+    * Bugfix: register script array
 
 * 0.3 (2010.09.25)
     * Full compatibility with Wordpress 3.0.1
@@ -321,6 +323,8 @@ posts, but the links to the categories will still work (which is the default
 behavior in wordpress anyways)
 
 == CHANGELOG ==
+* 0.4 (2010.10.21)
+    * Bugfix: register script array
 
 * 0.3 (2010.09.25)
     * Full compatibility with Wordpress 3.0.1
