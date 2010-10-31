@@ -1,4 +1,4 @@
-<?php 
+<?php
 class collapsCatWidget extends WP_Widget {
   function collapsCatWidget() {
     $widget_ops = array('classname' => 'widget_collapscat', 'description' =>

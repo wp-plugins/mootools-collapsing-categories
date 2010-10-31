@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5
+Moo Collapsing Categories version: 0.5.1
 
 Copyright 2010 3dolab
 
@@ -23,8 +23,7 @@ This file is part of Moo Collapsing Categories
     You should have received a copy of the GNU General Public License
     along with Collapsing Categories; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/ 
-
+*/
 check_admin_referer();
 
 $options=get_option('collapsCatOptions');

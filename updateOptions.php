@@ -110,5 +110,4 @@
           'olderThan', 'postDateAppend','postTitleLength', 'useCookies',
           'showTopLevel', 'postsBeforeCats', 'catfeed', 'addMisc',
           'addMiscTitle');
-
 ?>

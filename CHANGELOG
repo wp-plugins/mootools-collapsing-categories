@@ -1,5 +1,8 @@
 Moo Collapsing Categories Changelog
 
+* 0.5.1 (2010.10.31)
+    * Bugfix: array_slice parameter null
+
 * 0.5 (2010.10.30)
     * Bugfix: HTML character entities not rendered on MSIE
     * Bugfix: CSS reference to widget

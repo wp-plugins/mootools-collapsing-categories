@@ -4,7 +4,7 @@ Plugin Name: Moo Collapsing Categories
 Plugin URI: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
-Version: 0.5
+Version: 0.5.1
 Author URI: http://www.3dolab.net
 
 Copyright 2010 3dolab
@@ -28,11 +28,10 @@ This file is part of Moo Collapsing Categories
     You should have received a copy of the GNU General Public License
     along with Collapsing Categories; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/ 
-
+*/
 $url = get_settings('siteurl');
 global $collapsCatVersion;
-$collapsCatVersion = '0.5';
+$collapsCatVersion = '0.5.1';
 
 if (!is_admin()) {
   $inFooter = get_option('collapsCatInFooter');

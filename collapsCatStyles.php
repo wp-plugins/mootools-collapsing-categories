@@ -1,4 +1,4 @@
-    <?php
+<?php
 $style=".widget_collapscat span.collapsing.categories.item {
         border:0;
         padding:0; 

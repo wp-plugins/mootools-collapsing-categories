@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5
+Moo Collapsing Categories version: 0.5.1
 
 Copyright 2010 3dolab
 
@@ -23,7 +23,7 @@ This file is part of Moo Collapsing Categories
     You should have received a copy of the GNU General Public License
     along with Collapsing Categories; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/ 
+*/
 global $collapsCatItems;
 $collapsCatItems = array();
 function add_to_includes($cat, $inexclusionarray) {
@@ -276,10 +276,6 @@ function get_sub_cat($cat, $categories, $parents, $posts,
               $link2 .= apply_filters('single_cat_title', $cat2->name).'</a></li>';
             }
           }
-	  if( $showPostCount=='yes') {
-	    $theCount=$subCatPostCount2 + array_sum(array_slice($subCatPostCounts, $depth));
-	    $link2 = str_replace('</a>', ' (' . $theCount.')</a>', $link2);
-	  }
         } else {
           list ($subCatLink2, $subCatCount,$subCatPostCount2)= 
               get_sub_cat($cat2, $categories, $parents, $posts, $subCatCount,
@@ -568,7 +564,6 @@ function list_categories($posts, $categories, $parents, $options) {
     checkCurrentCat($thisCat,$categories);
   }
   $catlink = $wp_rewrite->get_category_permastruct();
-
 
   foreach( $categories as $cat ) {
     $totalCatPostCount=0;
