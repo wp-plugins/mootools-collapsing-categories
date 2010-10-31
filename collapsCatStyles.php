@@ -1,20 +1,20 @@
     <?php
-$style="#sidebar span.collapsing.categories.item {
+$style=".widget_collapscat span.collapsing.categories.item {
         border:0;
         padding:0; 
         margin:0; 
         cursor:pointer;
 }
-#sidebar li.collapsing.categories.item a.self {font-weight:bold}
-#sidebar ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item {
+.widget_collapscat li.collapsing.categories.item a.self {font-weight:bold}
+.widget_collapscat ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item {
        text-indent:-1em;
        padding-left:1em;
        margin:0 0 0 1em;}
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item:before {content: '\\\\00BB \\\\00A0' !important;} 
-#sidebar ul.collapsing.categories.list .sym {
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item:before {content: '\\\\00BB \\\\00A0' !important;} 
+.widget_collapscat ul.collapsing.categories.list .sym {
    font-size:1.2em;
    font-family:Monaco, 'Andale Mono', 'FreeMono', 'Courier new', 'Courier', monospace;
     cursor:pointer;
@@ -22,32 +22,32 @@ $style="#sidebar span.collapsing.categories.item {
 
 $default=$style;
 
-$block="#sidebar li.collapsing.categories.item a {
+$block=".widget_collapscat li.collapsing.categories.item a {
             display:inline-block;
             text-decoration:none;
             margin:0;
             padding:0;
             }
-#sidebar li.collapsing.categories.item ul li.collapsing.categories.item a {
+.widget_collapscat li.collapsing.categories.item ul li.collapsing.categories.item a {
             display:block;
 }
-#sidebar li.collapsing.categories.item a:hover {
+.widget_collapscat li.collapsing.categories.item a:hover {
             background:#CCC;
             text-decoration:none;
           }
-#sidebar span.collapsing.categories.item {
+.widget_collapscat span.collapsing.categories.item {
         border:0;
         padding:0; 
         margin:0; 
         cursor:pointer;
 }
-#sidebar li.collapsing.categories.item a.self {font-weight:bold}
-#sidebar ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item {
+.widget_collapscat li.collapsing.categories.item a.self {font-weight:bold}
+.widget_collapscat ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item {
       }
-#sidebar ul.collapsing.categories.list .sym {
+.widget_collapscat ul.collapsing.categories.list .sym {
    font-size:1.2em;
    font-family:Monaco, 'Andale Mono', 'FreeMono', 'Courier new', 'Courier', monospace;
     float:left;
@@ -56,17 +56,17 @@ $block="#sidebar li.collapsing.categories.item a {
 }
 ";
 
-$noArrows="#sidebar span.collapsing.categories.item {
+$noArrows=".widget_collapscat span.collapsing.categories.item {
         border:0;
         padding:0; 
         margin:0; 
         cursor:pointer;
 }
-#sidebar li.collapsing.categories.item a.self {font-weight:bold}
-#sidebar ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
-#sidebar ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
-#sidebar ul.collapsing.categories.list .sym {
+.widget_collapscat li.collapsing.categories.item a.self {font-weight:bold}
+.widget_collapscat ul.collapsing.categories.list ul.collapsing.categories.list:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item:before {content:'';} 
+.widget_collapscat ul.collapsing.categories.list li.collapsing.categories.item {list-style-type:none}
+.widget_collapscat ul.collapsing.categories.list .sym {
    font-size:1.2em;
    font-family:Monaco, 'Andale Mono', 'FreeMono', 'Courier new', 'Courier', monospace;
     cursor:pointer;

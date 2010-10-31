@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.4
+Moo Collapsing Categories version: 0.5
 
 Copyright 2010 3dolab
 
@@ -387,8 +387,8 @@ function get_collapscat_fromdb($args='') {
     $expandSym=$customExpand;
     $collapseSym=$customCollapse;
   } else {
-    $expandSym='&#9656;';
-    $collapseSym='&#9662;';
+    $expandSym='&#9654;';
+    $collapseSym='&#9660;';
   }
   if ($expand==3) {
     $expandSymJS='expandImg';

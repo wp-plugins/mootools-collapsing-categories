@@ -1,6 +1,10 @@
-Moo Collapsing Archives Changelog
+Moo Collapsing Categories Changelog
 
-* 0.4 (2010.10.21)
+* 0.5 (2010.10.30)
+    * Bugfix: HTML character entities not rendered on MSIE
+    * Bugfix: CSS reference to widget
+
+* 0.4 (2010.10.20)
     * Bugfix: register script array
 
 * 0.3 (2010.09.25)
