@@ -81,7 +81,7 @@ stripslashes(get_option('collapsCatStyle')) ?>" />
        <select name='collapsCatDefaultStyles' id='collapsCatDefaultStyles'
          onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", false);' />
        <?php
-    $url = get_settings('siteurl') . '/wp-content/plugins/collapsing-pages';
+    $url = get_settings('siteurl') . '/wp-content/plugins/mootools-collapsing-categories';
        $styleOptions=get_option('collapsCatDefaultStyles');
        //print_r($styleOptions);
        $selected=$styleOptions['selected'];
