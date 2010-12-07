@@ -20,32 +20,6 @@ http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 
 = What's new? =
 
-* 0.5.2 (2010.12.07)
-    * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
-
-* 0.5.1 (2010.10.31)
-    * Bugfix: array_slice parameter null
-
-* 0.5 (2010.10.30)
-    * Bugfix: HTML character entities not rendered on MSIE
-    * Bugfix: CSS reference to widget
-
-* 0.4 (2010.10.20)
-    * Bugfix: register script array
-
-* 0.3 (2010.09.25)
-    * Full compatibility with Wordpress 3.0.1
-    * Updated according to Rob Felty's Collapsing Categories v.1.2.2
-    * Bugfix: title attribute of expand / collapse links
-
-* 0.2 (2010.06.28)
-    * Relies on MooTools 1.2.4
-
-* 0.1 (2010.06.16)
-    * Initial release
-    * Based on Rob Felty's Collapsing Categories v.1.1.1
-    * Relies on MooTools 1.1.1
- 
 See the CHANGELOG for more information
 
 
@@ -316,28 +290,28 @@ behavior in wordpress anyways)
 
 == CHANGELOG ==
 
-* 0.5.2 (2010.12.07)
+= 0.5.2 (2010.12.07) =
     * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
 
-* 0.5.1 (2010.10.31)
+= 0.5.1 (2010.10.31) =
     * Bugfix: array_slice parameter null
 
-* 0.5 (2010.10.30)
+= 0.5 (2010.10.30) =
     * Bugfix: HTML character entities not rendered on MSIE
     * Bugfix: CSS reference to widget
 
-* 0.4 (2010.10.20)
+= 0.4 (2010.10.20) =
     * Bugfix: register script array
 
-* 0.3 (2010.09.25)
+= 0.3 (2010.09.25) =
     * Full compatibility with Wordpress 3.0.1
     * Updated according to Rob Felty's Collapsing Categories v.1.2.2
     * Bugfix: title attribute of expand / collapse links
 
-* 0.2 (2010.06.28)
+= 0.2 (2010.06.28) =
     * Relies on MooTools 1.2.4
 
-* 0.1 (2010.06.16)
+= 0.1 (2010.06.16) =
     * Initial release
     * Based on Rob Felty's Collapsing Categories v.1.1.1
     * Relies on MooTools 1.1.1
