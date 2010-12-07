@@ -67,7 +67,7 @@
      sub-categories and/or Posts</label>
     </p>
     <p>Expanding and collapse characters:<br />
-     <strong>html:</strong> <input type="radio" name="<?php echo $this->get_field_name('expand'); ?>" <?php if($expand==0) echo 'checked'; ?> id="<?php echo $this->get_field_id('expand0') ?>" value='0'></input> <label for="<?php echo $this->get_field_id('expand0'); ?>">&#9654;&nbsp;&#9660;</label>
+     <strong>html:</strong> <input type="radio" name="<?php echo $this->get_field_name('expand'); ?>" <?php if($expand==0) echo 'checked'; ?> id="<?php echo $this->get_field_id('expand0') ?>" value='0'></input> <label for="<?php echo $this->get_field_id('expand0'); ?>">&#9658;&nbsp;&#9660;</label>
      <input type="radio" name="<?php echo $this->get_field_name('expand'); ?>" <?php if($expand==1) echo 'checked'; ?> id="<?php echo $this->get_field_id('expand1') ?>" value='1'></input> <label for="<?php echo $this->get_field_id('expand1'); ?>">+&nbsp;&mdash;</label>
      <input type="radio" name="<?php echo $this->get_field_name('expand'); ?>"
      <?php if($expand==2) echo 'checked'; ?> id="<?php echo
@@ -127,7 +127,7 @@ categories A and B when A or B is excluded</label>
      id="<?php echo $this->get_field_id('catfeedImage'); ?>"
      value='image'></input> <label for="catfeedImage"><?php _e('image', 'collapsing-categories') ?> <img src='../wp-includes/images/rss.png' />'</label>
     </p>
-  <a style='cursor:pointer' onclick='showAdvanced("<?php echo $this->get_field_id('advanced') ?>", "<?php echo $this->get_field_id('arrow') ?>");'><span id="<?php echo $this->get_field_id('arrow') ?>">&#9654;</span> Advanced options</a>
+  <a style='cursor:pointer' onclick='showAdvanced("<?php echo $this->get_field_id('advanced') ?>", "<?php echo $this->get_field_id('arrow') ?>");'><span id="<?php echo $this->get_field_id('arrow') ?>">&#9658;</span> Advanced options</a>
   <div id="<?php echo $this->get_field_id('advanced') ?>" style='display:none;'>
    <p>
      <input type="checkbox" name="<?php echo $this->get_field_name('addMisc'); ?>"
@@ -166,7 +166,7 @@ $this->get_field_id('debug') ?>"></input> <label for="<?php echo $this->get_fiel
       arrow.innerHTML='&#9660;';
     } else {
       advanced.style.display='none';
-      arrow.innerHTML='&#9654;';
+      arrow.innerHTML='&#9658;';
     }
   }
   </script>

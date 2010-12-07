@@ -1,5 +1,8 @@
 Moo Collapsing Categories Changelog
 
+* 0.5.2 (2010.12.07)
+    * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
+
 * 0.5.1 (2010.10.31)
     * Bugfix: array_slice parameter null
 

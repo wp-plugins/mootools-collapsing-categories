@@ -4,7 +4,7 @@ Homepage: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archiv
 Tags: categories, sidebar, widget, navigation, menu, posts, collapsing, collapsible, mootools
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 0.5.1
+Stable tag: 0.5.2
 
 This plugin uses Javascript based on MooTools framework to dynamically expand or collapse the categories listing.
 
@@ -19,6 +19,9 @@ category will be expanded. Fork of Rob Felty's Collapsing Categories
 http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 
 = What's new? =
+
+* 0.5.2 (2010.12.07)
+    * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
 
 * 0.5.1 (2010.10.31)
     * Bugfix: array_slice parameter null
@@ -60,20 +63,6 @@ earlier, please use collapsing categories version 0.9.9.
 If you prefer to insert code into your theme manually instead of using
 widgets, please note that the manual installation instructions have changed. 
 
-= What's New?=
-
-* 0.3 (2010.09.25)
-    * Full compatibility with Wordpress 3.0.1
-    * Updated according to Rob Felty's Collapsing Categories v.1.2.2
-    * Bugfix: title attribute of expand / collapse links
-
-* 0.2 (2010.06.28)
-    * Relies on MooTools 1.2.4
-
-* 0.1 (2010.06.16)
-    * Initial release
-    * Based on Rob Felty's Collapsing Categories v.1.0.2
-    * Relies on MooTools 1.1.1
 
 == Installation ==
 
@@ -173,11 +162,6 @@ The following classes are used:
 * collapse - applied to a category which can be collapsed (is currently
   expanded)
 * sym - class for the expanding / collapsing symbol
-
-== Screenshots ==
-
-1. a few expanded categories with default theme, showing nested categories
-2. available options 
 
 == Demo ==
 
@@ -331,6 +315,9 @@ posts, but the links to the categories will still work (which is the default
 behavior in wordpress anyways)
 
 == CHANGELOG ==
+
+* 0.5.2 (2010.12.07)
+    * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
 
 * 0.5.1 (2010.10.31)
     * Bugfix: array_slice parameter null
