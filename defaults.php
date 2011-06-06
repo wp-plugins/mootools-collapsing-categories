@@ -1,6 +1,6 @@
 <?php
 $defaults=array(
-   'title' => __('Categories', 'collapsing-categories'),
+   'title' => __('Categories', 'moo-collapsing-cat'),
    'showPostCount' => true,
    'inExclude' => 'exclude',
    'inExcludeCats' => '',

@@ -26,6 +26,7 @@
     $excludeAll='0';
     $addMisc=false;
     $showTopLevel=true;
+    $expandCatPost=true;
     $postsBeforeCats=false;
     $addMiscTitle='Miscellaneous';
   } else {
@@ -48,6 +49,7 @@
     $animate = $options[$number]['animate'];
     $debug = $options[$number]['debug'];
     $showTopLevel = $options[$number]['showTopLevel'];
+    $expandCatPost = $options[$number]['expandCatPost'];
     $postsBeforeCats = $options[$number]['postsBeforeCats'];
     $catfeed = $options[$number]['catfeed'];
     $catTag = $options[$number]['catTag'];

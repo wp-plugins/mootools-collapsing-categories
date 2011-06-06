@@ -4,7 +4,7 @@ Homepage: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archiv
 Tags: categories, sidebar, widget, navigation, menu, posts, collapsing, collapsible, mootools
 Requires at least: 2.8
 Tested up to: 3.0.1
-Stable tag: 0.5.2
+Stable tag: 0.5.4
 
 This plugin uses Javascript based on MooTools framework to dynamically expand or collapse the categories listing.
 
@@ -58,7 +58,6 @@ Presentation > Widgets section and drag over the Moo Collapsing Categories Widge
 in sidebar.php). See the Options section for more information on specifying
 options.
 `
-<?php 
 echo "<ul class='collapsCatList'>\n";
 if (function_exists('collapsCat')) {
   collapsCat();
@@ -66,7 +65,6 @@ if (function_exists('collapsCat')) {
   wp_get_categories('your_options_here');
 }
 echo "</ul>\n";
-?>
 `
 
 == Frequently Asked Questions ==
@@ -289,6 +287,13 @@ posts, but the links to the categories will still work (which is the default
 behavior in wordpress anyways)
 
 == CHANGELOG ==
+
+= 0.5.4 (2011.06.06) =
+    * Bugfix: widget advanced options expand on a single post
+    * Fixed plugin textdomain for translations
+
+= 0.5.3 (2010.12.21) =
+    * Bugfix: double name sub-categories
 
 = 0.5.2 (2010.12.07) =
     * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE

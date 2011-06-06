@@ -1,5 +1,5 @@
     <p>
-     <input type="checkbox" name="<?php echo $this->get_field_name('showPostCount'); ?>" <?php if ($showPostCount)  echo 'checked'; ?> id="<?php echo $this->get_field_id('showPostCount') ?>"></input> <label for="<?php echo $this->get_field_id('showPostCount'); ?>"><?php _e('Show post Count', 'collapsing-categories') ?></label>
+     <input type="checkbox" name="<?php echo $this->get_field_name('showPostCount'); ?>" <?php if ($showPostCount)  echo 'checked'; ?> id="<?php echo $this->get_field_id('showPostCount') ?>"></input> <label for="<?php echo $this->get_field_id('showPostCount'); ?>"><?php _e('Show post Count', 'moo-collapsing-cat') ?></label>
      <input type="checkbox" name="<?php echo $this->get_field_name('showPages'); ?>" <?php if ($showPages=='yes')  echo 'checked'; ?>
      id="<?php echo $this->get_field_id('showPages'); ?>"></input> <label
      for="<?php echo $this->get_field_id('showPages'); ?>">Show Pages as well as posts </label>
@@ -8,14 +8,14 @@
    <input type="checkbox" name="<?php echo $this->get_field_name('showPostDate'); ?>" <?php if ($showPostDate) echo
    'checked'; ?> id="<?php echo $this->get_field_id('showPostDate'); ?>"></input> 
 <label
-   for="showPostDate"><?php _e('Show Post Date', 'collapsing-categories'); ?></label>  
+   for="showPostDate"><?php _e('Show Post Date', 'moo-collapsing-cat'); ?></label>  
      <select name="<?php echo $this->get_field_name('postDateAppend'); ?>">
-     <option  <?php if($postDateAppend=='before') echo 'selected'; ?> id="<?php echo $this->get_field_id('postDateAppendBefore') ?>" value='before'><?php _e('Before post title', 'collapsing-categories') ?></option>
-     <option  <?php if($postDateAppend=='after') echo 'selected'; ?> id="<?php echo $this->get_field_id('postDateAppendAfter') ?>" value='after'><?php _e('After post title', 'collapsing-categories') ?></option>
+     <option  <?php if($postDateAppend=='before') echo 'selected'; ?> id="<?php echo $this->get_field_id('postDateAppendBefore') ?>" value='before'><?php _e('Before post title', 'moo-collapsing-cat') ?></option>
+     <option  <?php if($postDateAppend=='after') echo 'selected'; ?> id="<?php echo $this->get_field_id('postDateAppendAfter') ?>" value='after'><?php _e('After post title', 'moo-collapsing-cat') ?></option>
      </select>
    <label for="postDateFormat"><a href='http://php.net/date'
     title='information about date formatting syntax' target='_blank'>
-    <?php _e('as', 'collapsing-categories'); ?></a>:</label>
+    <?php _e('as', 'moo-collapsing-cat'); ?></a>:</label>
    <input type="text" size='8' name="<?php echo $this->get_field_name('postDateFormat'); ?>" value="<?php echo $postDateFormat; ?>" 
    id="<?php echo $this->get_field_id('postDateFormat'); ?>"></input> 
    </p>
@@ -27,8 +27,8 @@
      <option <?php if($catSort=='catOrder') echo 'selected'; ?> id="sortcatOrder" value='catOrder'>category (term) Order</option>
      <option <?php if($catSort=='catCount') echo 'selected'; ?> id="sortcatCount" value='catCount'>category Count</option>
     </select>
-     <input type="radio" name="<?php echo $this->get_field_name('catSortOrder'); ?>" <?php if($catSortOrder=='ASC') echo 'checked'; ?> id="<?php echo $this->get_field_id('catSortASC') ?>" value='ASC'></input> <label for="<?php echo $this->get_field_id('catSortASC'); ?>"><?php _e('Ascending', 'collapsing-categories') ?></label>
-     <input type="radio" name="<?php echo $this->get_field_name('catSortOrder'); ?>" <?php if($catSortOrder=='DESC') echo 'checked'; ?> id="<?php echo $this->get_field_id('catSortDESC') ?>" value='DESC'></input> <label for="<?php echo $this->get_field_id('catSortDESC'); ?>"><?php _e('Descending', 'collapsing-categories') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('catSortOrder'); ?>" <?php if($catSortOrder=='ASC') echo 'checked'; ?> id="<?php echo $this->get_field_id('catSortASC') ?>" value='ASC'></input> <label for="<?php echo $this->get_field_id('catSortASC'); ?>"><?php _e('Ascending', 'moo-collapsing-cat') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('catSortOrder'); ?>" <?php if($catSortOrder=='DESC') echo 'checked'; ?> id="<?php echo $this->get_field_id('catSortDESC') ?>" value='DESC'></input> <label for="<?php echo $this->get_field_id('catSortDESC'); ?>"><?php _e('Descending', 'moo-collapsing-cat') ?></label>
     </p>
     <p>Sort Posts by:<br />
      <select name="<?php echo $this->get_field_name('postSort'); ?>">
@@ -37,18 +37,18 @@
      <option <?php if($postSort=='postComment') echo 'selected'; ?> id="<?php echo $this->get_field_id('sortpostComment') ?>" value='postComment'>number of Comments</option>
      <option <?php if($postSort=='postDate') echo 'selected'; ?> id="<?php echo $this->get_field_id('sortpostOrder') ?>" value='postDate'>post Date</option>
     </select>
-     <input type="radio" name="<?php echo $this->get_field_name('postSortOrder'); ?>" <?php if($postSortOrder=='ASC') echo 'checked'; ?> id="<?php echo $this->get_field_id('postSortASC') ?>" value='ASC'></input> <label for="<?php echo $this->get_field_id('postPostASC'); ?>"><?php _e('Ascending', 'collapsing-categories') ?></label>
-     <input type="radio" name="<?php echo $this->get_field_name('postSortOrder'); ?>" <?php if($postSortOrder=='DESC') echo 'checked'; ?> id="<?php echo $this->get_field_id('postPostDESC') ?>" value='DESC'></input> <label for="<?php echo $this->get_field_id('postPostDESC'); ?>"><?php _e('Descending', 'collapsing-categories') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('postSortOrder'); ?>" <?php if($postSortOrder=='ASC') echo 'checked'; ?> id="<?php echo $this->get_field_id('postSortASC') ?>" value='ASC'></input> <label for="<?php echo $this->get_field_id('postPostASC'); ?>"><?php _e('Ascending', 'moo-collapsing-cat') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('postSortOrder'); ?>" <?php if($postSortOrder=='DESC') echo 'checked'; ?> id="<?php echo $this->get_field_id('postPostDESC') ?>" value='DESC'></input> <label for="<?php echo $this->get_field_id('postPostDESC'); ?>"><?php _e('Descending', 'moo-collapsing-cat') ?></label>
     </p>
     <p>List:
-     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='cat') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagCat'); ?>" value='cat'></input> <label for="<?php echo $this->get_field_id('catTagCat'); ?>"><?php _e('Categories', 'collapsing-categories') ?></label>
-     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='tag') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagTag'); ?>" value='tag'></input> <label for="<?php echo $this->get_field_id('catTagTag'); ?>"><?php _e('Tags', 'collapsing-categories') ?></label>
-     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='both') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagBoth'); ?>" value='both'></input> <label for="<?php echo $this->get_field_id('catTagBoth'); ?>"><?php _e('Categories and Tags', 'collapsing-categories') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='cat') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagCat'); ?>" value='cat'></input> <label for="<?php echo $this->get_field_id('catTagCat'); ?>"><?php _e('Categories', 'moo-collapsing-cat') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='tag') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagTag'); ?>" value='tag'></input> <label for="<?php echo $this->get_field_id('catTagTag'); ?>"><?php _e('Tags', 'moo-collapsing-cat') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('catTag'); ?>" <?php if($catTag=='both') echo 'checked'; ?> id="<?php echo $this->get_field_id('catTagBoth'); ?>" value='both'></input> <label for="<?php echo $this->get_field_id('catTagBoth'); ?>"><?php _e('Categories and Tags', 'moo-collapsing-cat') ?></label>
     </p>
     <p>Expanding shows:
-     <input type="radio" name="<?php echo $this->get_field_name('showPosts'); ?>" <?php if($showPosts==true) echo 'checked'; ?> id="<?php echo $this->get_field_id('showPostsYes') ?>" value='yes'></input> <label for="showPostsYes"><?php _e('Sub-categories and Posts', 'collapsing-categories') ?></label>
+     <input type="radio" name="<?php echo $this->get_field_name('showPosts'); ?>" <?php if($showPosts==true) echo 'checked'; ?> id="<?php echo $this->get_field_id('showPostsYes') ?>" value='yes'></input> <label for="showPostsYes"><?php _e('Sub-categories and Posts', 'moo-collapsing-cat') ?></label>
      <input type="radio" name="<?php echo $this->get_field_name('showPosts'); ?>"
-     <?php if($showPosts==false) echo 'checked'; ?> id="showPostsNo" value='no'></input> <label for="showPostsNO"><?php _e('Just Sub-categories', 'collapsing-categories') ?></label>
+     <?php if($showPosts==false) echo 'checked'; ?> id="showPostsNo" value='no'></input> <label for="showPostsNO"><?php _e('Just Sub-categories', 'moo-collapsing-cat') ?></label>
     </p>
    <p> Truncate Post Title to
    <input type="text" size='3' name="<?php echo $this->get_field_name('postTitleLength') ?>"
@@ -59,7 +59,7 @@
      <input type="radio" name="<?php echo $this->get_field_name('linkToCat'); ?>"
      <?php if($linkToCat) echo 'checked'; ?>
      id="<?php echo $this->get_field_id('linkToCatYes'); ?>"
-     value='yes'></input> <label for="<?php echo $this->get_field_id('linkToCatYes'); ?>"><?php _e('Links to category archive', 'collapsing-categories') ?></label>
+     value='yes'></input> <label for="<?php echo $this->get_field_id('linkToCatYes'); ?>"><?php _e('Links to category archive', 'moo-collapsing-cat') ?></label>
      <input type="radio" name="<?php echo $this->get_field_name('linkToCat'); ?>"
      <?php if(!$linkToCat) echo 'checked'; ?>
      id="<?php echo $this->get_field_id('linkToCatNo'); ?>"
@@ -76,7 +76,7 @@ $this->get_field_id('expand2') ?>" value='2'></input>
      <input type="radio" name="<?php echo $this->get_field_name('expand'); ?>"
      <?php if($expand==4) echo 'checked'; ?> id="<?php echo
 $this->get_field_id('expand4') ?>" value='4'></input>
-     <label for="<?php echo $this->get_field_id('expand4'); ?>"><?php _e('custom', 'collapsing-categories') ?></label>
+     <label for="<?php echo $this->get_field_id('expand4'); ?>"><?php _e('custom', 'moo-collapsing-cat') ?></label>
      expand: 
      <input type="text" size='2' name="<?php echo $this->get_field_name('customExpand'); ?>" value="<?php echo $customExpand ?>" id="<?php echo $this->get_field_id('collapsLink') ?>"></input> 
      collapse: 
@@ -117,15 +117,15 @@ categories A and B when A or B is excluded</label>
      <input type="radio" name="<?php echo $this->get_field_name('catfeed'); ?>"
      <?php if($catfeed=='none') echo 'checked'; ?>
      id="<?php echo $this->get_field_id('catfeedNone'); ?>"
-     value='none'></input> <label for="<?php echo $this->get_field_id('catfeedNone'); ?>"><?php _e('None', 'collapsing-categories') ?></label>
+     value='none'></input> <label for="<?php echo $this->get_field_id('catfeedNone'); ?>"><?php _e('None', 'moo-collapsing-cat') ?></label>
      <input type="radio" name="<?php echo $this->get_field_name('catfeed'); ?>"
      <?php if($catfeed=='text') echo 'checked'; ?>
      id="<?php echo $this->get_field_id('catfeedText'); ?>"
-     value='text'></input> <label for="<?php echo $this->get_field_id('catfeedText'); ?>"><?php _e('text (RSS)', 'collapsing-categories') ?></label>
+     value='text'></input> <label for="<?php echo $this->get_field_id('catfeedText'); ?>"><?php _e('text (RSS)', 'moo-collapsing-cat') ?></label>
      <input type="radio" name="<?php echo $this->get_field_name('catfeed'); ?>"
      <?php if($catfeed=='image') echo 'checked'; ?>
      id="<?php echo $this->get_field_id('catfeedImage'); ?>"
-     value='image'></input> <label for="catfeedImage"><?php _e('image', 'collapsing-categories') ?> <img src='../wp-includes/images/rss.png' />'</label>
+     value='image'></input> <label for="catfeedImage"><?php _e('image', 'moo-collapsing-cat') ?> <img src='../wp-includes/images/rss.png' />'</label>
     </p>
   <a style='cursor:pointer' onclick='showAdvanced("<?php echo $this->get_field_id('advanced') ?>", "<?php echo $this->get_field_id('arrow') ?>");'><span id="<?php echo $this->get_field_id('arrow') ?>">&#9658;</span> Advanced options</a>
   <div id="<?php echo $this->get_field_id('advanced') ?>" style='display:none;'>
@@ -142,8 +142,7 @@ categories A and B when A or B is excluded</label>
 <?php if ($showTopLevel)  echo 'checked'; ?> id="<?php echo $this->get_field_id('showTopLevel'); ?>"></input>    Show top level categories
    </p>
    <p>
-     <input type="checkbox" name="<?php echo
-$this->get_field_name('expandCatPost'); ?>"
+     <input type="checkbox" name="<?php echo $this->get_field_name('expandCatPost'); ?>"
 <?php if ($expandCatPost)  echo 'checked'; ?> id="<?php echo $this->get_field_id('expandCatPost'); ?>"></input> Expand categories assigned to a particular post on a single post page 
    </p>
    <p>

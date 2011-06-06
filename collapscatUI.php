@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.2
+Moo Collapsing Categories version: 0.5.4
 
 Copyright 2010 3dolab
 
@@ -62,10 +62,10 @@ include('processOptions.php');
 ?>
 <div class=wrap>
  <form method="post">
-  <h2><? _e('Collapsing Categories Options', 'collapsing-categories'); ?></h2>
+  <h2><? _e('Collapsing Categories Options', 'moo-collapsing-cat'); ?></h2>
   <fieldset name="Collapsing Categories Options">
     <p>
- <?php _e('Id of the sidebar where collapsing categories appears:', 'collapsing-categories'); ?>
+ <?php _e('Id of the sidebar where collapsing categories appears:', 'moo-collapsing-cat'); ?>
    <input id='collapsCatSidebarId' name='collapsCatSidebarId' type='text' size='20' value="<?php echo
    get_option('collapsCatSidebarId')?>" onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", false);' />
    <table>
@@ -75,7 +75,7 @@ include('processOptions.php');
 stripslashes(get_option('collapsCatStyle')) ?>" />
   <input type='hidden' id='collapsCatSelectedStyle'
   name='collapsCatSelectedStyle' />
-<label for="collapsCatStyle"><?php _e('Select style:', 'collapsing-categories'); ?></label>
+<label for="collapsCatStyle"><?php _e('Select style:', 'moo-collapsing-cat'); ?></label>
        </td>
        <td>
        <select name='collapsCatDefaultStyles' id='collapsCatDefaultStyles'
@@ -99,13 +99,13 @@ stripslashes(get_option('collapsCatStyle')) ?>" />
        ?>
        </select>
        </td>
-       <td><?php _e('Preview', 'collapsing-categories'); ?><br />
+       <td><?php _e('Preview', 'moo-collapsing-cat'); ?><br />
        <img style='border:1px solid' id='collapsCatStylePreview' alt='preview'/>
        </td>
     </tr>
     </table>
-    <?php _e('You may also customize your style below if you wish', 'collapsing-categories'); ?><br />
-   <input type='button' value='<?php _e("restore current style", "collapsing-categories"); ?>'
+    <?php _e('You may also customize your style below if you wish', 'moo-collapsing-cat'); ?><br />
+   <input type='button' value='<?php _e('restore current style', 'moo-collapsing-cat'); ?>'
 onclick='restoreStyle();' /><br />
    <textarea onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", true);' cols='78' rows='10' id="collapsCatStyle" name="collapsCatStyle"><?php echo stripslashes(get_option('collapsCatStyle'))?></textarea>
    </p>
@@ -115,7 +115,7 @@ onclick='restoreStyle();' /><br />
    'checked'; ?> id="collapsCatInFooter"></input> 
 <label
    for="collapsCatInFooter"><?php _e('Put javascript file in footer (speeds
-   page load, but is not compatible with all themes', 'collapsing-categories'); ?></label>  
+   page load, but is not compatible with all themes', 'moo-collapsing-cat'); ?></label>  
     </p>
 <script type='text/javascript'>
 
@@ -158,7 +158,7 @@ function restoreStyle() {
 </script>
   </fieldset>
   <div class="submit">
-   <input type="submit" name="infoUpdate" value="<?php _e('Update options', 'collapsing-categories'); ?> &raquo;" />
+   <input type="submit" name="infoUpdate" value="<?php _e('Update options', 'moo-collapsing-cat'); ?> &raquo;" />
   </div>
  </form>
 </div>

@@ -4,7 +4,7 @@ Plugin Name: Moo Collapsing Categories
 Plugin URI: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
-Version: 0.5.2
+Version: 0.5.4
 Author URI: http://www.3dolab.net
 
 Copyright 2010 3dolab
@@ -31,7 +31,7 @@ This file is part of Moo Collapsing Categories
 */
 $url = get_settings('siteurl');
 global $collapsCatVersion;
-$collapsCatVersion = '0.5.2';
+$collapsCatVersion = '0.5.4';
 
 if (!is_admin()) {
   $inFooter = get_option('collapsCatInFooter');
@@ -55,7 +55,8 @@ register_activation_hook(__FILE__, array('collapsCat','init'));
 class collapsCat {
 	function init_textdomain() {
 	  $plugin_dir = basename(dirname(__FILE__)) . '/languages/';
-	  load_plugin_textdomain( 'mootools-collapsing-categories', WP_PLUGIN_DIR . $plugin_dir, $plugin_dir );
+	  //load_plugin_textdomain( 'mootools-collapsing-categories', WP_PLUGIN_DIR . $plugin_dir, $plugin_dir );
+	  load_plugin_textdomain( 'moo-collapsing-cat', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	function init() {
@@ -91,8 +92,8 @@ class collapsCat {
 	function setup() {
 		if( function_exists('add_options_page') ) {
       if (current_user_can('manage_options')) {
-				add_options_page(__('Collapsing Categories'),
-            __('Collapsing Categories'),1,
+				add_options_page(__('Collapsing Categories', 'moo-collapsing-cat'),
+            __('Collapsing Categories', 'moo-collapsing-cat'),1,
             basename(__FILE__),array('collapscat','ui'));
 			}
 		}

@@ -7,13 +7,21 @@ window.addEvent('domready', function() {
 		});  
 	  if (typeof(collapseText)!='undefined' && typeof(expandText)!='undefined') {
 	    var SymText;
+	    var SymClass;
+	    var SymOldClass;
 	    if (state==collapse){
 	      SymText=collapseText;
+	      SymClass='collapse';
+	      SymOldClass='expand';
 	    }
 	    else if (state==expand){
 	      SymText=expandText;
+	      SymClass='expand';
+	      SymOldClass='collapse';
 	    }
 	    symlink.parentNode.setAttribute('title',SymText);
+	    symlink.parentNode.removeClass(SymOldClass);
+	    symlink.parentNode.addClass(SymClass);
 	  }
 	  if (typeof(expand)!='undefined' && typeof(collapse)!='undefined') {
 	    if (expand=='expandImg') {

@@ -108,6 +108,6 @@
           'animate', 'debug', 'showPosts', 'customExpand', 'customCollapse',
           'catTag', 'linkToCat', 'showPostDate', 'postDateFormat',
           'olderThan', 'postDateAppend','postTitleLength', 'useCookies',
-          'showTopLevel', 'postsBeforeCats', 'catfeed', 'addMisc',
-          'addMiscTitle');
+          'expandCatPost', 'showTopLevel', 'postsBeforeCats', 'catfeed',
+	  'addMisc', 'addMiscTitle');
 ?>

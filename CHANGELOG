@@ -1,5 +1,12 @@
 Moo Collapsing Categories Changelog
 
+= 0.5.4 (2011.06.06) =
+    * Bugfix: widget advanced options expand on a single post
+    * Fixed plugin textdomain for translations
+
+= 0.5.3 (2010.12.21) =
+    * Bugfix: double name sub-categories
+
 = 0.5.2 (2010.12.07) =
     * DEFINITIVE fix for Unicode Triangle Entities not rendered on MSIE
 

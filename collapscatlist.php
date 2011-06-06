@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.2
+Moo Collapsing Categories version: 0.5.4
 
 Copyright 2010 3dolab
 
@@ -77,7 +77,7 @@ function miscPosts($cat,$catlink,$subcatpostcount2, $posttext) {
   $theID='collapsCat-' . $cat->slug . ":$number-misc";
 
   if ((in_array($cat->term_id, $cur_categories) && $expandCatPost) ||
-      ($useCookies && $_COOKIE[$theID]==1)) {
+      ($useCookies && $_COOKIE[$theID]==1) || ($useCookies && $_COOKIE[$theID]=='off')) {
     $expanded='block';
   }
   if ($expanded=='block') {
@@ -156,9 +156,7 @@ function getSubPosts($posts, $cat2, $showPosts, $theID) {
           $self="";
         $date=preg_replace("/-/", '/', $post2->date);
         $name=$post2->post_name;
-        $title_text = htmlspecialchars(strip_tags(__($post2->post_title),
-        'collapsing-categories'), 
-            ENT_QUOTES);
+        $title_text = htmlspecialchars(strip_tags(__($post2->post_title)), ENT_QUOTES);
         $tmp_text = '';
         if ($postTitleLength> 0 && strlen($title_text) > $postTitleLength ) {
           $tmp_text = substr($title_text, 0, $postTitleLength );
@@ -253,8 +251,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
           $link2= getCollapsCatLink($cat2,$catlink,$self);
           if ( empty($cat2->description) ) {
             $link2 .= 'title="'. 
-                sprintf(__("View all posts filed under %s",
-                'collapsing-categories'), 
+                sprintf(__("View all posts filed under %s", 'moo-collapsing-cat'), 
                 wp_specialchars(apply_filters('single_cat_title',$cat2->name))) . '"';
           } else {
             $link2 .= 'title="' . 
@@ -298,7 +295,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
           $link2=getCollapsCatLink($cat2,$catlink,$self);
           if ( empty($cat2->description) ) {
             $link2 .= 'title="'. 
-                sprintf(__("View all posts filed under %s"), 
+                sprintf(__('View all posts filed under %s', 'moo-collapsing-cat'), 
                 wp_specialchars(apply_filters('single_cat_title',$cat2->name))) . '"';
           } else {
             $link2 .= 'title="' . 
@@ -554,6 +551,7 @@ function list_categories($posts, $categories, $parents, $options) {
     $thisPost = $wp_query->post->ID;
     foreach ($categories as $cat) {
       if (!empty($cur_categories) && (in_array($cat->term_id, $cur_categories))) {
+	if ($expandCatPost)
         checkCurrentCat($cat,$categories);
       }
     }
@@ -561,6 +559,7 @@ function list_categories($posts, $categories, $parents, $options) {
   if (is_category() || is_tag()) {
     $thisCatID = get_query_var('cat');
     $thisCat = get_category($thisCatID);
+    if ($expandCatPost)
     checkCurrentCat($thisCat,$categories);
   }
   $catlink = $wp_rewrite->get_category_permastruct();
@@ -616,8 +615,7 @@ function list_categories($posts, $categories, $parents, $options) {
       $link=getCollapsCatLink($cat,$catlink,$self);
       if ( empty($cat->description) ) {
         $link .= 'title="'. 
-            sprintf(__("View all posts filed under %s",
-            'collapsing-categories'),
+            sprintf(__('View all posts filed under %s', 'moo-collapsing-cat'),
             wp_specialchars(apply_filters('single_cat_title',$cat->name))) . '"';
       } else {
         $link .= 'title="' . wp_specialchars(apply_filters(
