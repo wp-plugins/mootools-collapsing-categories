@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Moo Collapsing Categories 0.5.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-29 00:17+0100\n"
+"PO-Revision-Date: 2011-06-21 13:10+0100\n"
+"Last-Translator: &#604;dolab <boss@3dolab.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: collapscat.php:77
+#: collapscat.php:78
+msgid "Collapsing Categories"
+msgstr "Categorie Espandibili"
+
+#: collapscat.php:77
+#: collapscat.php:78
+msgid "Moo Collapsing Categories"
+msgstr "Moo Categorie Espandibili"
+
+msgid "Moo Collapsing Categories Options"
+msgstr "Opzioni Moo Categorie Espandibili"
+
+#: defaults.php:3
+msgid "Categories"
+msgstr "Categorie"
+
+#: collapscatUI.php:58
+msgid "Collapsing Categories Options"
+msgstr "Opzioni delle Categorie Espandibili"
+
+#: collapscatUI.php:61
+msgid "Id of the sidebar where collapsing categories appears:"
+msgstr "ID della barra laterale dove compaiono le categorie:"
+
+msgid "Put javascript file in footer (speeds page load, but is not compatible with all themes)"
+msgstr "Carica il javascript nel footer (velocizza il caricamento delle pagine, ma non &egrave; compatibile con tutti i temi)"
+
+#: collapscatUI.php:71
+msgid "Select style:"
+msgstr "Scegli stile:"
+
+#: collapscatUI.php:95
+msgid "Preview"
+msgstr "Anteprima"
+
+#: collapscatUI.php:100
+msgid "You may also customize your style below if you wish"
+msgstr "&Egrave; anche possibile personalizzare a piacimento lo stile seguente"
+
+#: collapscatUI.php:101
+msgid "restore current style"
+msgstr "ripristina lo stile corrente"
+
+#: collapscatUI.php:142
+msgid "Update options"
+msgstr "Aggiorna Opzioni"
+
+#: collapscatlist.php:233
+#: collapscatlist.php:280
+#: collapscatlist.php:578
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Mostra tutti gli articoli della categoria %s"
+
+msgid "click to collapse"
+msgstr "comprimi"
+
+msgid "click to expand"
+msgstr "espandi"
+
+msgid "Animate collapsing and expanding"
+msgstr "Effetto di animazione compressione/espansione"
+
+msgid "(cookies required: see below)"
+msgstr "(sono richiesti i cookies: vedi sotto)"
+
+msgid "Ascending"
+msgstr "Crescente"
+
+msgid "Descending"
+msgstr "Decrescente"
+
+msgid "Expanding and collapse characters:"
+msgstr "Simboli per compressione/espansione"
+
+msgid "expand:"
+msgstr "espandi:"
+
+msgid "collapse:"
+msgstr "comprimi:"
+
+msgid "Include"
+msgstr "Includi"
+
+msgid "Exclude"
+msgstr "Escludi"
+
+msgid "Truncate Post Title to"
+msgstr "Accorcia il titolo a"
+
+msgid "characters"
+msgstr "caratteri"
+
+msgid "Remember expanding and collapsing for each visitor (using cookies)"
+msgstr "Ricorda le voci espanse e compresse (usando i cookie)"
+
+msgid "images:"
+msgstr "immagini:"
+
+msgid "html:"
+msgstr "html:"
+
+msgid "custom"
+msgstr "personalizzato"
+
+msgid "Title:"
+msgstr "Titolo:"
+
+msgid "Style can be set from the %s"
+msgstr "Lo stile viene impostato dalla %s"
+
+msgid "Style can be set from the"
+msgstr "Lo stile pu&ograve; essere impostato nella"
+
+msgid "options page"
+msgstr "pagina opzioni"
+
+msgid "Show post Count"
+msgstr "Mostra il conteggio degli articoli"
+
+msgid "Show Pages as well as posts"
+msgstr "Mostra sia le pagine che gli articoli"
+
+msgid "Show Post Date"
+msgstr "Mostra la data degli articoli"
+
+msgid "Before post title"
+msgstr "Prima del titolo"
+
+msgid "After post title"
+msgstr "Dopo il titolo"
+
+msgid "as"
+msgstr "come"
+
+msgid "Sort Categories by:"
+msgstr "Ordina le categorie per:"
+
+msgid "category name"
+msgstr "nome categoria"
+
+msgid "category id"
+msgstr "ID categoria"
+
+msgid "category slug"
+msgstr "slug categoria"
+
+msgid "category (term) order"
+msgstr "ordine categoria (term)"
+
+msgid "category count"
+msgstr "conteggio categoria"
+
+msgid "Sort Posts by:"
+msgstr "Ordina gli articoli per:"
+
+msgid "post title"
+msgstr "titolo articolo"
+
+msgid "post id"
+msgstr "ID articolo"
+
+msgid "number of comments"
+msgstr "numero di commenti"
+
+msgid "post date"
+msgstr "data articolo"
+
+msgid "List:"
+msgstr "Elenca:"
+
+msgid "Tags"
+msgstr "Tag"
+
+msgid "Categories and Tags"
+msgstr "Categorie e Tag"
+
+msgid "Expanding shows:"
+msgstr "Mostra quando espandi:"
+
+msgid "Sub-categories and Posts"
+msgstr "Sotto-categorie ed articoli"
+
+msgid "Just Sub-categories"
+msgstr "Solo sotto-categorie"
+
+msgid "Clicking on category name:"
+msgstr "Il clic sul nome della categoria:"
+
+msgid "Links to category archive"
+msgstr "Manda all'archivio della categoria"
+
+msgid "Expands to show sub-categories and/or Posts"
+msgstr "Espande e mostra sotto-categorie e/o articoli"
+
+msgid "Auto-expand these categories (separated by commas):"
+msgstr "Espandi automaticamente le seguenti categorie (separate da virgola)"
+
+msgid "these categories (separated by commas):"
+msgstr "le seguenti categorie (separate da virgola)"
+
+msgid "Exclude post X from categories A and B when A or B is excluded"
+msgstr "Escludi l'articolo X dalle categorie A e B quando A o B sono escluse"
+
+msgid "Exclude posts older than"
+msgstr "Escludi gli articoli pi&ugrave; vecchi di"
+
+msgid "days"
+msgstr "giorni"
+
+msgid "Include RSS link"
+msgstr "Includi link RSS"
+
+msgid "None"
+msgstr "nessuno"
+
+msgid "text (RSS)"
+msgstr "testo (RSS)"
+
+msgid "image"
+msgstr "immagine"
+
+msgid "Advanced options"
+msgstr "Opzioni avanzate"
+
+msgid "When category X has sub-categories, group posts in a sub-category into a"
+msgstr "Quando una categoria ha delle sotto-categorie, raggruppa i rispettivi articoli in una"
+
+msgid "category"
+msgstr "categoria"
+
+msgid "Show top level categories"
+msgstr "Mostra le categorie di primo livello"
+
+msgid "Expand categories assigned to a particular post on a single post page"
+msgstr "Espandi le categorie assegnate ad un articolo nella pagina del singolo articolo"
+
+msgid "Posts should come before sub-categories"
+msgstr "Mostra articoli prima delle sotto-categorie"
+
+msgid "Show debugging information (shows up as a hidden pre right after the title)"
+msgstr "Mostra informazioni di debug (appaiono come pre nascosto appena dopo il titolo)"
+
+msgid "Pages"
+msgstr "Pagine"
+
+msgid "Show posts as well as pages"
+msgstr "Mostra articoli e pagine"
+
+msgid "Sort by:"
+msgstr "Ordina per:"
+
+msgid "Display Options:"
+msgstr "Opzioni di visualizzazione:"
+
