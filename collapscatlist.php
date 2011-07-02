@@ -1,8 +1,8 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.4
+Moo Collapsing Categories version: 0.5.5
 
-Copyright 2010 3dolab
+Copyright 2011 3dolab
 
 This work is largely based on the Collapsing Categories plugin by Robert Felty
 (http://robfelty.com), which was also distributed under the GPLv2.
@@ -359,7 +359,7 @@ function get_sub_cat($cat, $categories, $parents, $posts,
 function get_collapscat_fromdb($args='') {
   global $expandSym,$collapseSym,$expandSymJS, $collapseSymJS, 
       $wpdb,$options,$wp_query, $autoExpand, $postsToExclude, 
-      $postsInCat;
+      $postsInCat,$sitepress;
   include('defaults.php');
   $options=wp_parse_args($args, $defaults);
   extract($options);
@@ -445,43 +445,80 @@ function get_collapscat_fromdb($args='') {
   }
 
 	if ($catTag == 'tag') {
-	  $catTagQuery= "'post_tag'";
+	  $catTagQuery = "'post_tag'";
+	  $transl_tax = "'tax_post_tag'";
 	} elseif ($catTag == 'both') {
-	  $catTagQuery= "'category','post_tag'";
+	  $catTagQuery = "'category','post_tag'";
+	  $transl_tax = "'tax_category','tax_post_tag'";
 	} else {
-	  $catTagQuery= "'category'";
+	  $catTagQuery = "'category'";
+	  $transl_tax = "'tax_category'";
 	}
 	if ($olderThan > 0) {
 		$now = date('U');
 		$olderThanQuery= "AND  date(post_date) > '" . 
 			date('Y-m-d', $now-date('U',$olderThan*60*60*24)) . "'";
 	}
-
-
-  $catquery = "SELECT t.*, tt.* FROM $wpdb->terms AS t INNER JOIN
-      $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN
-      ($catTagQuery) $inExcludeQuery AND t.slug!='blogroll' 
-      $catSortColumn $catSortOrder ";
   $posts = NULL;
-  if ($showPosts) {
-    $postsInCat=array();
-    $postquery= "select ID, slug, date(post_date) as date, post_status,
-         post_date, post_author, post_title, post_name, name, object_id,
-         t.term_id from $wpdb->term_relationships AS tr, $wpdb->posts AS p,
-         $wpdb->terms AS t, $wpdb->term_taxonomy AS tt
-         WHERE tt.term_id = t.term_id 
-         AND object_id=ID 
-         $olderThanQuery
-         AND post_status='publish'
-         AND tr.term_taxonomy_id = tt.term_taxonomy_id 
-         AND tt.taxonomy IN ($catTagQuery) $isPage $postSortColumn $postSortOrder";
-    $posts= $wpdb->get_results($postquery); 
-    foreach ($posts as $post) {
-      if (!$postsInCat[$post->term_id]) {
-        $postsInCat[$post->term_id]=array();
+  if(isset($sitepress)){
+      $lang_in_use = strtolower(ICL_LANGUAGE_CODE);
+      $catquery = "SELECT t.*, tt.* FROM $wpdb->terms AS t
+	INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id
+	INNER JOIN {$wpdb->prefix}icl_translations AS transl ON tt.term_taxonomy_id = transl.element_id AND transl.language_code = '$lang_in_use'
+	WHERE tt.taxonomy IN ($catTagQuery) $inExcludeQuery
+	AND t.slug!='blogroll' 
+	AND transl.element_type IN ($transl_tax)
+	$catSortColumn $catSortOrder ";
+
+      if ($showPosts) {
+	$postsInCat=array();
+	$postquery= "select ID, slug, date(post_date) as date, post_status,
+	    post_date, post_author, post_title, post_name, name, object_id, t.term_id
+	    FROM $wpdb->term_relationships AS tr, $wpdb->posts AS p,
+	    $wpdb->terms AS t, $wpdb->term_taxonomy AS tt, {$wpdb->prefix}icl_translations AS transl
+	    WHERE tt.term_id = t.term_id 
+	    AND object_id=ID 
+	    $olderThanQuery
+	    AND post_status='publish'
+	    AND tr.term_taxonomy_id = tt.term_taxonomy_id 
+	    AND tt.taxonomy IN ($catTagQuery)
+	    AND tt.term_taxonomy_id = transl.element_id
+	    AND transl.language_code = '$lang_in_use'
+	    AND transl.element_type IN ($transl_tax) $isPage $postSortColumn $postSortOrder";
+	$posts= $wpdb->get_results($postquery); 
+	foreach ($posts as $post) {
+	  if (!$postsInCat[$post->term_id]) {
+	    $postsInCat[$post->term_id]=array();
+	  }
+	  array_push($postsInCat[$post->term_id], $post);
+	}
       }
-      array_push($postsInCat[$post->term_id], $post);
-    }
+  }else{
+      $catquery = "SELECT t.*, tt.* FROM $wpdb->terms AS t INNER JOIN
+	$wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN
+	($catTagQuery) $inExcludeQuery AND t.slug!='blogroll' 
+	$catSortColumn $catSortOrder ";
+
+      if ($showPosts) {
+	$postsInCat=array();
+	$postquery= "select ID, slug, date(post_date) as date, post_status,
+	    post_date, post_author, post_title, post_name, name, object_id,
+	    t.term_id from $wpdb->term_relationships AS tr, $wpdb->posts AS p,
+	    $wpdb->terms AS t, $wpdb->term_taxonomy AS tt
+	    WHERE tt.term_id = t.term_id 
+	    AND object_id=ID 
+	    $olderThanQuery
+	    AND post_status='publish'
+	    AND tr.term_taxonomy_id = tt.term_taxonomy_id 
+	    AND tt.taxonomy IN ($catTagQuery) $isPage $postSortColumn $postSortOrder";
+	$posts= $wpdb->get_results($postquery); 
+	foreach ($posts as $post) {
+	  if (!$postsInCat[$post->term_id]) {
+	    $postsInCat[$post->term_id]=array();
+	  }
+	  array_push($postsInCat[$post->term_id], $post);
+	}
+      }
   }
   $categories = $wpdb->get_results($catquery);
   $totalPostCount=count($posts);

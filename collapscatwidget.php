@@ -39,12 +39,12 @@ class collapsCatWidget extends WP_Widget {
     $options=wp_parse_args($instance, $defaults);
     extract($options);
 ?>
-      <p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input  id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
+      <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'moo-collapsing-cat'); ?> <input  id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" /></label></p>
 <?php
     include('options.txt');
 ?>
-  <p>Style can be set from the <a
-  href='options-general.php?page=collapscat.php'>options page</a></p>
+  <p><?php _e('Style can be set from the', 'moo-collapsing-cat'); ?> <a
+  href='options-general.php?page=collapscat.php'><?php _e('options page', 'moo-collapsing-cat'); ?></a></p>
 <?php
   }
 }

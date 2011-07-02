@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Moo Collapsing Categories
-Plugin URI: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
+Plugin URI: http://www.3dolab.net/en/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
-Version: 0.5.4
+Version: 0.5.5
 Author URI: http://www.3dolab.net
 
-Copyright 2010 3dolab
+Copyright 2011 3dolab
 
 This work is largely based on the Collapsing Categories plugin by Robert Felty
 (http://robfelty.com), which was also distributed under the GPLv2.
@@ -31,7 +31,7 @@ This file is part of Moo Collapsing Categories
 */
 $url = get_settings('siteurl');
 global $collapsCatVersion;
-$collapsCatVersion = '0.5.4';
+$collapsCatVersion = '0.5.5';
 
 if (!is_admin()) {
   $inFooter = get_option('collapsCatInFooter');
@@ -92,8 +92,8 @@ class collapsCat {
 	function setup() {
 		if( function_exists('add_options_page') ) {
       if (current_user_can('manage_options')) {
-				add_options_page(__('Collapsing Categories', 'moo-collapsing-cat'),
-            __('Collapsing Categories', 'moo-collapsing-cat'),1,
+				add_options_page(__('Moo Collapsing Categories', 'moo-collapsing-cat'),
+            __('Moo Collapsing Categories', 'moo-collapsing-cat'),1,
             basename(__FILE__),array('collapscat','ui'));
 			}
 		}
@@ -134,9 +134,9 @@ function collapsCat($args='', $print=true) {
       print($collapsCatText);
       echo "<li style='display:none'><script type=\"text/javascript\">\n";
       echo "// <![CDATA[\n";
-      echo '/* These variables are part of the Collapsing Categories Plugin 
-      *  Version: 0.3
-      * Copyright 2010 3DO lab (3dolab.net)
+      echo '/* These variables are part of the Moo Collapsing Categories Plugin 
+      *  Version: 0.5.5
+      * Copyright 2011 3DO lab (3dolab.net)
       */' . "\n";
       global $expandSym,$collapseSym,$expandSymJS, $collapseSymJS, 
       $wpdb,$options,$wp_query, $autoExpand, $postsToExclude, 
@@ -171,11 +171,16 @@ function collapsCat($args='', $print=true) {
     $expandSymJS=$expandSym;
     $collapseSymJS=$collapseSym;
   }
-       echo "var expandSym=\"$expandSym\";";
+   $expandText= __('click to expand', 'moo-collapsing-cat');
+   $collapseText= __('click to collapse', 'moo-collapsing-cat');
+    echo "var expandSym=\"$expandSym\";";
     echo "var collapseSym=\"$collapseSym\";";
     echo "var expand=\"$expandSymJS\";";
     echo "var collapse=\"$collapseSymJS\";";
     echo "var animate=\"$animate\";";
+    echo "var expandText=\"$expandText\";";
+    echo "var collapseText=\"$collapseText\";";
+    echo "var useCookies=\"$useCookies\";";
     foreach ($autoExpand as $expandedCat){
 	    $expandCookieCat = "Cookie.write('collapsCat-".$expandedCat.":".$number."', 'inline');";
 	    echo $expandCookieCat;

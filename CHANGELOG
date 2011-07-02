@@ -1,5 +1,10 @@
 Moo Collapsing Categories Changelog
 
+= 0.5.5 (2011.06.21) =
+    * Added compatibility for WPML Multilingual CMS (tested with ver 2.3.0)
+    * Fixed localization in admin screens
+    * Added full Italian translation
+
 = 0.5.4 (2011.06.06) =
     * Bugfix: widget advanced options expand on a single post
     * Fixed plugin textdomain for translations

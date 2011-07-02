@@ -1,8 +1,8 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.4
+Moo Collapsing Categories version: 0.5.5
 
-Copyright 2010 3dolab
+Copyright 2011 3dolab
 
 This work is largely based on the Collapsing Categories plugin by Robert Felty
 (http://robfelty.com), which was also distributed under the GPLv2.
@@ -62,7 +62,7 @@ include('processOptions.php');
 ?>
 <div class=wrap>
  <form method="post">
-  <h2><? _e('Collapsing Categories Options', 'moo-collapsing-cat'); ?></h2>
+  <h2><? _e('Moo Collapsing Categories Options', 'moo-collapsing-cat'); ?></h2>
   <fieldset name="Collapsing Categories Options">
     <p>
  <?php _e('Id of the sidebar where collapsing categories appears:', 'moo-collapsing-cat'); ?>
@@ -113,9 +113,7 @@ onclick='restoreStyle();' /><br />
    <input type="checkbox" name="collapsCatInFooter" id ="collapsCatInFooter"
    <?php if (get_option('collapsCatInFooter')) echo
    'checked'; ?> id="collapsCatInFooter"></input> 
-<label
-   for="collapsCatInFooter"><?php _e('Put javascript file in footer (speeds
-   page load, but is not compatible with all themes', 'moo-collapsing-cat'); ?></label>  
+<label for="collapsCatInFooter"><?php _e('Put javascript file in footer (speeds page load, but is not compatible with all themes)', 'moo-collapsing-cat'); ?></label>  
     </p>
 <script type='text/javascript'>
 

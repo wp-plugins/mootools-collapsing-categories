@@ -1,10 +1,10 @@
 === Moo Collapsing Categories ===
 Contributors: 3dolab
-Homepage: http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
+Homepage: http://www.3dolab.net/en/mootools-collapsing-categories-and-archives
 Tags: categories, sidebar, widget, navigation, menu, posts, collapsing, collapsible, mootools
 Requires at least: 2.8
-Tested up to: 3.0.1
-Stable tag: 0.5.4
+Tested up to: 3.1.3
+Stable tag: 0.5.5
 
 This plugin uses Javascript based on MooTools framework to dynamically expand or collapse the categories listing.
 
@@ -12,21 +12,17 @@ This plugin uses Javascript based on MooTools framework to dynamically expand or
 
 This is a relatively simple plugin that uses Javascript based on MooTools framework to
 make each Categories links in the sidebar collapsable. Every post corresponding to a given
-category will be expanded. Fork of Rob Felty's Collapsing Categories
+category will be expanded. Fork of Rob Felty's Collapsing Categories.
+
+Multiple languages content is now fully supported through compatibility with qTranslate and WPML Multilingual CMS
 
 = Plugin Homepage =
 
-http://www.3dolab.net/en/259/mootools-collapsing-categories-and-archives
+http://www.3dolab.net/en/mootools-collapsing-categories-and-archives
 
 = What's new? =
 
 See the CHANGELOG for more information
-
-
-This is a very simple plugin that uses Javascript to form a collapsable set of
-links in the sidebar for the categories. Every post corresponding to a given
-category will be expanded.
-
 
 = IMPORTANT INFORMATION regarding wordpress 2.7 and 2.8 =
 
@@ -50,7 +46,6 @@ mootools-collapsing-categories/ directory.
 
  Activate the plugin, then simply go the
 Presentation > Widgets section and drag over the Moo Collapsing Categories Widget.
-
 
 = Manual installation = 
 
@@ -287,6 +282,11 @@ posts, but the links to the categories will still work (which is the default
 behavior in wordpress anyways)
 
 == CHANGELOG ==
+
+= 0.5.5 (2011.06.21) =
+    * Added compatibility for WPML Multilingual CMS (tested with ver 2.3.0)
+    * Fixed localization in admin screens
+    * Added full Italian translation
 
 = 0.5.4 (2011.06.06) =
     * Bugfix: widget advanced options expand on a single post
