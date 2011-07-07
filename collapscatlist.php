@@ -371,10 +371,10 @@ function get_collapscat_fromdb($args='') {
     $collapseSym='[—]';
   } elseif ($expand==3) {
     $expandSym="<img src='". get_settings('siteurl') .
-         "/wp-content/plugins/collapsing-categories/" . 
+         "/wp-content/plugins/mootools-collapsing-categories/" . 
          "img/expand.gif' alt='expand' />";
     $collapseSym="<img src='". get_settings('siteurl') .
-         "/wp-content/plugins/collapsing-categories/" . 
+         "/wp-content/plugins/mootools-collapsing-categories/" . 
          "img/collapse.gif' alt='collapse' />";
   } elseif ($expand==4) {
     $expandSym=$customExpand;
