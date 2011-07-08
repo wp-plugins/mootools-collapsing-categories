@@ -24,14 +24,13 @@ http://www.3dolab.net/en/mootools-collapsing-categories-and-archives
 
 See the CHANGELOG for more information
 
-= IMPORTANT INFORMATION regarding wordpress 2.7 and 2.8 =
+= Compatibility =
 
-Version 0.2 is compatible with wordpress 2.8+,
-but not compatible with prior versions. If you are using wordpress 2.7.1 or
-earlier, please use collapsing categories version 0.9.9.
+This plugin is compatible with WordPress 2.8+, but not with prior versions
+(2.7.1 or earlier).
 
 If you prefer to insert code into your theme manually instead of using
-widgets, please note that the manual installation instructions have changed. 
+widgets, please check the manual installation instructions.
 
 
 == Installation ==
@@ -114,10 +113,9 @@ you are using the widget)
 
 =  How do I change the style of the collapsing categories lists? =
 
-As of version 0.9, there are several default styles that come with
-collapsing-categories. You can choose from these in the settings panel, or you
-can create your own custom style. A good strategy is to choose a default, then
-modify it slightly to your needs. 
+There are several default styles that come with the plugin.
+You can choose from these in the settings panel, or you can create your own custom style.
+A good strategy is to choose a default, then modify it slightly to your needs. 
 
 The following classes are used:
 * collapsing - applied to all ul and li elements
