@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.5
+Moo Collapsing Categories version: 0.5.6
 
 Copyright 2011 3dolab
 
@@ -48,11 +48,13 @@ if( isset($_POST['resetOptions']) ) {
   $selectedStyle=$_POST['collapsCatSelectedStyle'];
   $defaultStyles['selected']=$selectedStyle;
   $defaultStyles['custom']=$_POST['collapsCatStyle'];
+  $MTversion = $_POST['MTversion'];
 
   update_option('collapsCatStyle', $style);
   update_option('collapsCatSidebarId', $_POST['collapsCatSidebarId']);
   update_option('collapsCatInFooter', $_POST['collapsCatInFooter']);
   update_option('collapsCatDefaultStyles', $defaultStyles);
+  update_option('MTversion', $MTversion);
 
   if ($widgetOn==0) {
     include('updateOptions.php');
@@ -68,6 +70,10 @@ include('processOptions.php');
  <?php _e('Id of the sidebar where collapsing categories appears:', 'moo-collapsing-cat'); ?>
    <input id='collapsCatSidebarId' name='collapsCatSidebarId' type='text' size='20' value="<?php echo
    get_option('collapsCatSidebarId')?>" onchange='changeStyle("collapsCatStylePreview","collapsCatStyle", "collapsCatDefaultStyles", "collapsCatSelectedStyle", false);' />
+<select id='MTversion' name='MTversion'>
+<option value="12" <?php if(get_option('MTversion') == '12') echo 'selected="selected"'; ?>>MooTools v.1.2.5</option>
+<option value="13" <?php if(get_option('MTversion') == '13') echo 'selected="selected"'; ?>>MooTools v.1.3.2</option>
+</select>
    <table>
      <tr>
        <td>

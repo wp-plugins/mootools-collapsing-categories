@@ -33,6 +33,12 @@
         $catSort= '' ;
         $catSortOrder= '' ;
       }
+      if ($new_instance['MTversion'] == '13') {
+        $MTversion= '13' ;
+      } else {
+        $MTversion= '12' ;
+      } 
+
       $postSortOrder= 'ASC' ;
       if ($new_instance['postSortOrder'] == 'DESC') {
         $postSortOrder= 'DESC' ;
@@ -109,5 +115,5 @@
           'catTag', 'linkToCat', 'showPostDate', 'postDateFormat',
           'olderThan', 'postDateAppend','postTitleLength', 'useCookies',
           'expandCatPost', 'showTopLevel', 'postsBeforeCats', 'catfeed',
-	  'addMisc', 'addMiscTitle');
+	  'addMisc', 'addMiscTitle', 'MTversion' );
 ?>

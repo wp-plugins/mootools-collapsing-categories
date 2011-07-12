@@ -1,6 +1,6 @@
 <?php
 /*
-Moo Collapsing Categories version: 0.5.5
+Moo Collapsing Categories version: 0.5.6
 
 Copyright 2011 3dolab
 

@@ -30,6 +30,7 @@
     $expandCatPost=true;
     $postsBeforeCats=false;
     $addMiscTitle='Miscellaneous';
+    $MTversion = '12';
   } else {
     $title = attribute_escape($options[$number]['title']);
     $showPostCount = $options[$number]['showPostCount'];
@@ -59,5 +60,6 @@
     $excludeAll = $options[$number]['excludeAll'];
     $addMisc = $options[$number]['addMisc'];
     $addMiscTitle = $options[$number]['addMiscTitle'];
+    $MTversion = $options[$number]['MTversion'];
   }
 ?>

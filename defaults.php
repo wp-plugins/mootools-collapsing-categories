@@ -26,6 +26,7 @@ $defaults=array(
    'useCookies' => true,
    'postsBeforeCats' => false,
    'expandCatPost' => true,
-   'showTopLevel' => true
+   'showTopLevel' => true,
+   'MTversion' => '12'
 );
 ?>

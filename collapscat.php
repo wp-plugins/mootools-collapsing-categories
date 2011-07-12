@@ -4,7 +4,7 @@ Plugin Name: Moo Collapsing Categories
 Plugin URI: http://www.3dolab.net/en/mootools-collapsing-categories-and-archives
 Description: Allows users to expand and collapse categories with MooTools. NOT COMPATIBLE WITH WP 2.7 OR LESS  <a href='options-general.php?page=collapsArch.php'>Options and Settings</a> 
 Author: 3dolab
-Version: 0.5.5
+Version: 0.5.6
 Author URI: http://www.3dolab.net
 
 Copyright 2011 3dolab
@@ -31,15 +31,24 @@ This file is part of Moo Collapsing Categories
 */
 $url = get_settings('siteurl');
 global $collapsCatVersion;
-$collapsCatVersion = '0.5.5';
+$collapsCatVersion = '0.5.6';
 
 if (!is_admin()) {
   $inFooter = get_option('collapsCatInFooter');
-  wp_register_script('moocore',"$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-core-yc.js", false, '1.2');
-  wp_register_script('moomore', "$url/wp-content/plugins/mootools-collapsing-categories/mootools-1.2-more.js", false, '1.2');
+  $MTversion = get_option('MTversion');
+  if ($MTversion == '12'){
+  wp_register_script('moocore', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/mootools-1.2.5-core-yc.js', false, '1.2.5');
+  wp_register_script('moomore', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/mootools-1.2.5.1-more-yc.js', false, '1.2.5');
   wp_enqueue_script('moocore');
   wp_enqueue_script('moomore');
-  wp_enqueue_script('collapsFunctions', "$url/wp-content/plugins/mootools-collapsing-categories/collapsFunctions.js", array('moocore','moomore'), '1.2');
+  wp_enqueue_script('collapsFunctions', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/collapsFunctions.js', array('moocore','moomore'), '1.2.5');
+  } elseif ($MTversion == '13'){
+  wp_register_script('moocore', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/mootools-core-1.3.2-full-nocompat-yc.js', false, '1.3.2');
+  wp_register_script('moomore', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/mootools-more-1.3.2.1-yc.js', false, '1.3.2');
+  wp_enqueue_script('moocore');
+  wp_enqueue_script('moomore');
+  wp_enqueue_script('collapsFunctions', WP_PLUGIN_URL . '/'.dirname( plugin_basename(__FILE__)).'/js/collapsFunctions-1.3.js', array('moocore','moomore'), '1.3.2');
+  }
   add_action( 'wp_head', array('collapsCat','get_head'));
 //  add_action( 'wp_footer', array('collapsCat','get_foot'));
 } else {
@@ -86,6 +95,9 @@ class collapsCat {
     if (!get_option('collapsCatVersion')) {
       add_option( 'collapsCatVersion', $collapsCatVersion);
 		}
+    if (!get_option('MTversion')) {
+      add_option( 'MTversion', $MTversion);
+		}
 
 	}
 
@@ -105,8 +117,17 @@ class collapsCat {
 	function get_head() {
     $style=stripslashes(get_option('collapsCatStyle'));
     echo "<style type='text/css'>
-    $style
-    </style>\n";
+    ".$style."
+    </style>\n
+    <!--[if lte IE 8]>
+      <style type='text/css'>
+	  #".get_option('collapsCatSidebarId')." ul li, #".get_option('collapsCatSidebarId')." ul.collapsing.categories.list li.collapsing.categories.item {
+		text-indent:0;
+		padding:0;
+		margin:0;
+	  } 
+      </style>
+    <![endif]-->";
 	}
   function phpArrayToJS($array,$name) {
     /* generates javscript code to create an array from a php array */
